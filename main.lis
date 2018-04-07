@@ -1,0 +1,44 @@
+                        .module main.c
+                        .area text
+ 0000           _main::
+ 0000           ; 
+ 0000           ; #include "hcs12dp256.h"
+ 0000           ; #include "steepper.h"
+ 0000           ; 
+ 0000           ; #define EnableInterrupt()  asm("CLI")  //开放总中断
+ 0000           ; #define DisableInterrupt() asm("SEI")  //禁止总中断
+ 0000           ; 
+ 0000           ; 
+ 0000           ; #define uint8   unsigned char        //            typedef unsigned char         uint8; //  8 位无符号数
+ 0000           ; #define	uint16  unsigned short int   //            // 16 位无符号数
+ 0000           ; #define	uint32  unsigned long int   //            // 32 位无符号数
+ 0000           ;  
+ 0000           ; 
+ 0000           ; 
+ 0000           ; void main(void)
+ 0000           ; {
+ 0000           ;         
+ 0000           ;  
+ 0000           ;     DisableInterrupt();  
+ 0000 1410              SEI
+ 0002           ;        
+ 0002           ;    
+ 0002           ;     KBInit();                                      
+ 0002 160000            jsr _KBInit
+ 0005           ; 
+ 0005           ;    
+ 0005           ;     //    EnableKBint();                               
+ 0005           ;     EnableInterrupt();                            
+ 0005 10EF              CLI
+ 0007           L4:
+ 0007           ;     
+ 0007           ;   
+ 0007           ;     while(1)
+ 0007           ;      { 
+ 0007           ;      }
+ 0007           L5:
+ 0007 20FE              bra L4
+ 0009           X0:
+ 0009           L3:
+ 0009                   .dbline 0 ; func end
+ 0009 3D                rts

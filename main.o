@@ -1,0 +1,8 @@
+XH
+H 1 areas 2 global symbols
+M main.c
+S _KBInit Ref0000
+A text size A flags 0
+S _main Def0000
+T 00 00 14 10 16 00 00 10 EF 20 FE 3D
+R 00 00 00 00 02 05 00 00
